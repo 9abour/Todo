@@ -32,6 +32,11 @@
 			background-color: $clr-white;
 			box-shadow: $light-shadow;
 			margin-bottom: 1rem;
+			.del-category {
+				position: absolute;
+				right: 0.5rem;
+				top: 0.5rem;
+			}
 			p {
 				text-transform: lowercase;
 				margin-left: 0;
@@ -78,6 +83,7 @@
 			margin-top: 1rem;
 			overflow-y: scroll;
 			.task {
+				position: relative;
 				padding: 0.4rem;
 				background-color: $clr-white;
 				border-radius: $radius;
@@ -85,6 +91,12 @@
 				display: flex;
 				align-items: center;
 				height: 3rem;
+				.del-task {
+					position: absolute;
+					right: 0.5rem;
+					top: 50%;
+					transform: translateY(-50%);
+				}
 				.task-name {
 					text-transform: none;
 					color: $clr-primary-6;

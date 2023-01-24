@@ -9,7 +9,11 @@ const Categories = () => {
 				<TodoConsumer>
 					{value => {
 						return (
-							<Category categories={value.categories} tasks={value.tasks} />
+							<Category
+								categories={value.categories}
+								tasks={value.tasks}
+								value={value}
+							/>
 						);
 					}}
 				</TodoConsumer>

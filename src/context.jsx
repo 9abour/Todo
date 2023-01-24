@@ -219,6 +219,40 @@ class TodoProvider extends Component {
 		}
 	};
 
+	// Delete Category
+	delCategory = categoryName => {
+		const categoriesFromLS = JSON.parse(localStorage.getItem("categories"));
+
+		const filteredCategories = categoriesFromLS.filter(
+			item => item.categoryName !== categoryName
+		);
+
+		localStorage.setItem("categories", JSON.stringify(filteredCategories));
+
+		this.setState(() => {
+			return {
+				categories: [...filteredCategories],
+			};
+		});
+	};
+
+	// Delete Task
+	delTask = taskName => {
+		const tasksFromLS = JSON.parse(localStorage.getItem("tasks"));
+
+		const filteredTasks = tasksFromLS.filter(
+			item => item.taskName !== taskName
+		);
+
+		localStorage.setItem("tasks", JSON.stringify(filteredTasks));
+
+		this.setState(() => {
+			return {
+				tasks: [...filteredTasks],
+			};
+		});
+	};
+
 	render() {
 		return (
 			<TodoContext.Provider
@@ -231,6 +265,8 @@ class TodoProvider extends Component {
 					handleCompletedTask: this.handleCompletedTask,
 					handleCategoryCheckBox: this.handleCategoryCheckBox,
 					resetSelectedCategories: this.resetSelectedCategories,
+					delCategory: this.delCategory,
+					delTask: this.delTask,
 				}}
 			>
 				{this.props.children}

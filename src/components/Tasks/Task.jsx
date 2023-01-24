@@ -42,7 +42,7 @@ const Task = props => {
 				boxShadow: `0 0 0 2px #858ea7`,
 				backgroundImage:
 					"url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath" +
-					" fill-rule='evenodd' clip-rule='evenodd' d='M12 5c-.28 0-.53.11-.71.29L7 9.59l-2.29-2.3a1.003 " +
+					" fillRule='evenodd' clip-rule='evenodd' d='M12 5c-.28 0-.53.11-.71.29L7 9.59l-2.29-2.3a1.003 " +
 					"1.003 0 00-1.42 1.42l3 3c.18.18.43.29.71.29s.53-.11.71-.29l5-5A1.003 1.003 0 0012 5z' fill='%23fff'/%3E%3C/svg%3E\")",
 				content: '""',
 			},
@@ -75,6 +75,24 @@ const Task = props => {
 				>
 					{task.taskName}
 				</p>
+				<button
+					className="del-task"
+					onClick={() => {
+						props.value.delTask(task.taskName);
+					}}
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="25"
+						height="25"
+						viewBox="0 0 20 20"
+					>
+						<path
+							fill="#ed2525f4"
+							d="M11.5 4a1.5 1.5 0 0 0-3 0h3Zm-4 0a2.5 2.5 0 0 1 5 0h5a.5.5 0 0 1 0 1h-1.054l-.808 7H14.63l.808-7H4.561l1.18 10.23A2 2 0 0 0 7.728 17h2.357a1.497 1.497 0 0 0 0 1H7.728a3 3 0 0 1-2.98-2.656L3.554 5H2.5a.5.5 0 0 1 0-1h5Zm4 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Z"
+						/>
+					</svg>
+				</button>
 			</div>
 		);
 	});
