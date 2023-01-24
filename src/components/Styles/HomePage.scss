@@ -1,0 +1,184 @@
+@import "../Styles/sass/index";
+
+.home-page {
+	position: relative;
+	width: 30rem;
+	height: 100%;
+	margin: 3rem auto;
+	padding: 2rem 1rem;
+	border-radius: $l-radius;
+	background-color: rgb(249, 249, 249);
+	box-shadow: $light-shadow;
+	@include xs {
+		& {
+			width: 22rem;
+			margin: 1rem auto;
+		}
+	}
+	.main-title {
+		margin-bottom: 2rem !important;
+	}
+	p {
+		color: $clr-grey-5;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+	.categories {
+		.category {
+			position: relative;
+			width: 12rem;
+			padding: 1.5rem 0.5rem;
+			border-radius: $radius;
+			background-color: $clr-white;
+			box-shadow: $light-shadow;
+			margin-bottom: 1rem;
+			p {
+				text-transform: lowercase;
+				margin-left: 0;
+			}
+			h2 {
+				text-transform: capitalize;
+				color: $clr-grey-1 !important;
+			}
+			.line-fill,
+			.line {
+				position: absolute;
+				height: 3px;
+				bottom: 10px;
+				left: 0.5rem;
+				border-radius: $radius;
+				z-index: 1;
+				transition: $normal-transition;
+				span {
+					position: absolute;
+					width: 4px;
+					height: 8px;
+					bottom: 0px;
+					right: 0;
+					border-radius: $radius;
+				}
+			}
+			.line-fill {
+				width: calc(100% - 15px);
+			}
+			.line {
+				width: calc(100% - 1rem);
+				background-color: $clr-grey-4;
+				z-index: 0;
+			}
+		}
+	}
+	.tasks-container {
+		margin-top: 3rem;
+		.tasks {
+			height: 30rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			margin-top: 1rem;
+			overflow-y: scroll;
+			.task {
+				padding: 0.4rem;
+				background-color: $clr-white;
+				border-radius: $radius;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.045);
+				display: flex;
+				align-items: center;
+				height: 3rem;
+				.task-name {
+					text-transform: none;
+					color: $clr-primary-6;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+	::-webkit-scrollbar {
+		-webkit-appearance: none;
+		width: 0px;
+	}
+
+	.add-task-btn {
+		background-color: $clr-primary-1;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		right: 2rem;
+		bottom: 2rem;
+	}
+}
+
+.add-task-container {
+	position: relative;
+	display: flex;
+	gap: 1rem;
+	@include sm {
+		display: flex;
+		flex-direction: column;
+		.add-task-input {
+			height: 20rem !important;
+		}
+	}
+	.add-task-input {
+		display: grid;
+		height: 100vh;
+		place-items: center;
+		margin: 0 auto;
+		@include sm {
+			height: 5rem !important;
+			margin-top: 1rem;
+		}
+		.input-color {
+			width: 25px;
+			border: none;
+			background-color: transparent;
+		}
+		.add-category {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			@include sm {
+				margin-top: 1rem;
+			}
+			button {
+				margin: 0 auto;
+			}
+		}
+	}
+	.menu {
+		@include sm {
+			margin-bottom: 1rem;
+		}
+		.css-k008qs {
+			height: 100vh !important;
+			@include sm {
+				display: block;
+				height: 20rem !important;
+			}
+			.css-hmaglg-MuiPaper-root {
+				width: 20rem;
+				border-radius: 0 !important;
+				@include sm {
+					max-width: 100% !important;
+					width: 100%;
+				}
+			}
+		}
+		.css-13cxy3i-MuiListItem-root {
+			display: flex;
+			justify-content: space-between;
+		}
+		.categories-list {
+			display: flex;
+			flex-direction: column;
+			.category {
+				padding: 0.5rem 1rem;
+				cursor: pointer;
+				background-color: #122c44;
+				&:hover {
+					background-color: #0f3960;
+				}
+			}
+		}
+	}
+}
